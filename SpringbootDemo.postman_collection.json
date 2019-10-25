@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "f7e74279-4ef8-4e63-a15d-9950c4d221e1",
+		"name": "SpringbootDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "MySQL",
+			"item": [
+				{
+					"name": "http://localhost:8080/data/data",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/data/data"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/data/data/1",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/data/data/1"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/data/data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"title\": \"title\",\r\n\t\"descp\": \"sfd esdghdesp dxh\",\r\n\t\"phone\": 786876876,\r\n\t\"pin\": 87687\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/data/data"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/data/data",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"id\": 5,\r\n\t\"title\": \"title new\",\r\n\t\"descp\": \"sfd esdghdesp dxh\",\r\n\t\"phone\": 786876876,\r\n\t\"pin\": 87687\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/data/data"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/data/data/0",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/data/data/0"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Mongo DB",
+			"item": [
+				{
+					"name": "http://localhost:8080/mongodbcurd/",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/mongodbcurd/"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/mongodbcurd/5db2cf3cc88dee67b31fe45a",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/mongodbcurd/5db2cf3cc88dee67b31fe45a"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/mongodbcurd/",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"name\": \"new\",\r\n\t\"species\": \"bat\",\r\n\t\"breed\": \"pitbull\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/mongodbcurd/"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/mongodbcurd/?serach=",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"_id\": \"5db2c444a5757a56fb349ad4\",\r\n\t\"name\": \"string new\",\r\n\t\"species\": \"string\",\r\n\t\"breed\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/mongodbcurd/?serach=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"mongodbcurd",
+								""
+							],
+							"query": [
+								{
+									"key": "serach",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/mongodbcurd/5db2cf3cc88dee67b31fe45a",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8080/mongodbcurd/5db2cf3cc88dee67b31fe45a"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Swagger API JSON",
+			"item": [
+				{
+					"name": "http://localhost:8080/actuator/health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator/health"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/actuator/info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator/info"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/actuator/mappings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator/mappings"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/actuator/metrics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator/metrics"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/actuator/env",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator/env"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/actuator/env/java.home",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator/env/java.home"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/management/beans",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/management/beans"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/actuator/threaddump",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator/threaddump"
+					},
+					"response": []
+				},
+				{
+					"name": "http://localhost:8080/actuator/myendpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/actuator/myendpoint"
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "f87e4258-fb39-408e-bf63-8f9b60597390",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "221e7ed0-eb7c-429f-88f5-a6b1a0575e8e",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "International",
+			"item": [
+				{
+					"name": "http://localhost:8080/international",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/international"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080"
+			},
+			"response": []
+		},
+		{
+			"name": "Swagger UI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/swagger-ui.html"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
