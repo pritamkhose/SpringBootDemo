@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>SpringBoot Thymeleaf  Bootstrap 4 Table Example</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+ 
+<body>
+<div class="container">
+	<h1>Data HTML Table</h1>
+	<div class="row col-md-12 table-responsive">
+		<table id="dataTable" class="table">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Title</th>
+					<th>Descp</th>
+					<th>Phone</th>
+					<th>Pin code</th>
+				</tr>
+			</thead>
+			<tbody>
+				 <tr th:each="data, rowStat: ${datas}"
+				 	 th:style="${rowStat.odd} ? 'color: gray' : 'color: blue;'">
+			        <td th:text="${data.id}">1</td>
+					<td th:text="${data.title}">Jack</td>
+			        <td th:text="${data.descp}">23</td>
+			        <td th:text="${data.phone}">AVE N</td>
+			        <td th:text="${data.pin}">77587</td>
+			    </tr>
+			</tbody>
+		</table>
+	</div>
+</div>
