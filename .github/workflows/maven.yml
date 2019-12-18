@@ -19,5 +19,5 @@ jobs:
     - name: Download artifact 
       uses: actions/download-artifact@v1
       with:
-        name: my-artifact
-    - run: cat my-artifact
+        name: target
+    - run: cat target
