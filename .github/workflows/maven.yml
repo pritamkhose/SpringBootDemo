@@ -16,8 +16,8 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     
-    - name: Download artifact 
-      uses: actions/download-artifact@v1
+    - name: Download jar 
+      uses: actions/upload-artifact@v1
       with:
         name: target
-    - run: cat target
+        path: target
