@@ -6,6 +6,8 @@ import io.swagger.annotations.ApiOperation;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.ui.Model;
@@ -27,7 +29,6 @@ public class MySQLDBController {
 		return dataService.findAll();
 	}
 
-	// https://stackoverflow.com/questions/38700790/how-to-return-a-html-page-from-a-restful-controller-in-spring-boot
 	@GetMapping("/dataHTML")
 	public ModelAndView listDataHTML(Model model) {
 		List<Data> datas = dataService.findAll();
@@ -38,19 +39,31 @@ public class MySQLDBController {
 	}
 
 	@RequestMapping(value = "/data/{id}", method = RequestMethod.GET)
-	public Data getData(@PathVariable(value = "id") Long id) {
-		return dataService.find(id);
+	public ResponseEntity<Object> getData(@PathVariable(value = "id") Long id) {
+		if (dataService.existsById(id)) {
+			return new ResponseEntity<Object>(dataService.find(id), HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
 
 	@RequestMapping(value = "/data", method = RequestMethod.POST)
-	public Data create(@RequestBody Data data) {
-		return dataService.save(data);
+	public ResponseEntity<Data> create(@RequestBody Data data) {
+		if (dataService.existsById(data.getId())) {
+			return new ResponseEntity<Data>(dataService.save(data), HttpStatus.CREATED);
+		} else {
+			return new ResponseEntity<Data>(dataService.save(data), HttpStatus.OK);
+		}
 	}
 
 	@RequestMapping(value = "/data/{id}", method = RequestMethod.DELETE)
-	public String delete(@PathVariable(value = "id") Long id) {
-		dataService.delete(id);
-		return "success";
+	public ResponseEntity<Void> delete(@PathVariable(value = "id") Long id) {
+		if (dataService.existsById(id)) {
+			dataService.delete(id);
+			return new ResponseEntity<Void>(HttpStatus.OK);
+		} else {
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
 	}
 
 }

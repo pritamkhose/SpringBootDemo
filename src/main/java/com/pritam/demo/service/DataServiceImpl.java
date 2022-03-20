@@ -42,4 +42,9 @@ public class DataServiceImpl implements DataService {
 		return data;
 
 	}
+
+	@Override
+	public boolean existsById(long id) {
+		return dataDao.existsById(id);
+	}
 }

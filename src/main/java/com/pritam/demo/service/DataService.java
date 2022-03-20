@@ -10,4 +10,5 @@ public interface DataService {
     List<Data> findAll();
     Data find(long id);
     void delete(long id);
+    boolean existsById(long id);
 }

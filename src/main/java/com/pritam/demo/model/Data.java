@@ -1,12 +1,9 @@
 package com.pritam.demo.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Length;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.lang.Nullable;
 
 @Entity
