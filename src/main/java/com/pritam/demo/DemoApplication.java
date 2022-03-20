@@ -18,6 +18,7 @@ public class DemoApplication {
 		LOGGER.debug("Sample Debug level log message");
 		LOGGER.error("Sample Error level log message");
 		LOGGER.info("Server started here -->> " + (new Date()));
+		LOGGER.info("System env -->> " +(System.getenv()));
 		
 		SpringApplication.run(DemoApplication.class, args);
 	}
